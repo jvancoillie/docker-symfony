@@ -5,10 +5,12 @@ services:
 
 before_install:
   - sed -e "s|/path/to/symfony/project|./symfony|g" .env.dist > .env
+  - cat .env
   - git clone https://github.com/symfony/symfony-demo symfony && cd symfony
   - composer install --no-interaction
   - cd ..
 
 script:
+  - docker-compose build
   - docker-compose up -d
   - docker-compose ps
