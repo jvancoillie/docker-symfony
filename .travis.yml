@@ -1,0 +1,14 @@
+language: php
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - sed -e "s|/path/to/symfony/project|./symfony|g" .env.dist > .env
+  - curl -LsS https://symfony.com/installer -o . &&  chmod a+x symfony
+  - ./symfony demo
+
+script:
+  - docker-compose up -d
+  - docker-compose ps
