@@ -11,17 +11,18 @@ services:
             - db:mysqldb
             - redis
         volumes:
-            - ../symfony:/var/www/html/symfony #replace .symfony with your project path 
-            - ./logs/symfony:/var/www/html/symfony/app/logs
+            - ${SYMFONY_PROJECT_PATH}:/var/www/html/symfony #replace $SYMFONY_PROJECT_PATH in .env file 
+            - ./logs/symfony:/var/www/html/symfony/var/logs
     db: #mysql container
         image: mysql
         ports:
             - 3306:3306
         volumes:
-            - "./data/db:/var/lib/mysql" #mysql data 
+            - ./data/db:/var/lib/mysql #mysql data 
         environment:
-            MYSQL_ROOT_PASSWORD: root
-
+            MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}        
     redis: # redis container
         image: redis:alpine
         ports:
