@@ -6,8 +6,9 @@ services:
 
 before_install:
   - sed -e "s|/path/to/symfony/project|./symfony|g" .env.dist > .env
-  - curl -LsS https://symfony.com/installer -o . &&  chmod a+x symfony
-  - ./symfony demo
+  - git clone https://github.com/symfony/symfony-demo symfony && cd symfony
+  - composer install --no-interaction
+  - cd ..
 
 script:
   - docker-compose up -d
