@@ -4,9 +4,6 @@ services:
   - docker
 
 before_install:
-  # Disable services enabled by default
-  # http://docs.travis-ci.com/user/database-setup/#MySQL
-  - sudo /etc/init.d/mysql stop
   - sed -e "s|/path/to/symfony/project|./symfony|g" .env.dist > .env
   - cat .env
   - git clone https://github.com/symfony/symfony-demo symfony && cd symfony

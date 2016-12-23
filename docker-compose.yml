@@ -15,8 +15,6 @@ services:
             - ./logs/symfony:/var/www/html/symfony/var/logs
     db: #mysql container
         image: mysql
-        ports:
-            - 3306:3306
         volumes:
             - ./data/db:/var/lib/mysql #mysql data 
         environment:
