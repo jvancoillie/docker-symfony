@@ -28,7 +28,7 @@ Run:
      $ docker-compose up -d
  ```
  
- ## How it works?
+## How it works?
  
  Have a look at the `docker-compose.yml` file, here are the `docker-compose` built images:
  
@@ -55,7 +55,7 @@ dockersymfony_redis_1      docker-entrypoint.sh redis ...   Up      0.0.0.0:6379
 elasticsearch              /docker-entrypoint.sh elas ...   Up      0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp      
  ```
  
- ## Useful commands
+## Useful commands
  
  ```bash
  # bash commands
