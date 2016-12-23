@@ -1,7 +1,7 @@
 # docker-symfony
+[![Build Status](https://travis-ci.org/jvancoillie/docker-symfony.svg?branch=master)](https://travis-ci.org/jvancoillie/docker-symfony)
 
 A complete development environment to run a Symfony project including 
-
 * [NGINX](https://www.nginx.com)
 * [PHP-FPM](https://php-fpm.org)
 * [MySQL](https://www.mysql.fr)
